@@ -1,0 +1,86 @@
+.
+basic mechanics
+.
+
+bonk around roguelike (moonring, bitsy)
+rule of seven
+https://mrmotarius.itch.io/moregoblins
+
+
+
+.
+spaces
+.
+rooms connected by sides
+save content per room
+flags determine loaded content
+
+.
+what to know about goblins
+.
+they like trinkets, it is their entire economy, a goblin with out a trinket is sad
+goblins like building and riding mine carts thru their tunnels
+goblens live under an anarcho-monoarchy
+seven is the highest they can count and even then its iffy
+goeblin maegic is performed via mixing potions created from mushrooms
+accurate mail system despite poor pengobship, goblein mail deliverers can immediately recognize an address
+they live in caves and forts ruled by kings
+the king is the one with the hat
+human knights are a goblins only enemy
+goblins drink milk and honey
+
+https://www.poetryfoundation.org/poems/44996/goblin-market
+
+.
+places
+.
+bird farm
+witch hut
+the mines
+kings fort
+
+
+.
+characters
+.
+player goblin
+skeleton friend
+big goblin
+king goblin
+soldier goblin
+mean knight
+cool witch
+fish dude
+
+.
+items
+.
+mushroom
+potion
+sword
+bow
+magic wand
+meat
+gem
+ring
+clock
+apple
+carrot
+egg
+
+.
+interactables
+.
+water
+boxes
+doors
+mine carts
+gears
+webs
+magic stones - portal
+ladder
+
+.
+tech
+.
+bg, fg, ag, glow layers
