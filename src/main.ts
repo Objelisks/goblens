@@ -3,8 +3,11 @@ import html from 'nanohtml'
 import {Display} from 'rot-js'
 import tilesUrl from '/tiles.png?url'
 import {tileMap} from './tiles.ts'
+import area1 from '/new1.psci?url'
 
-import {Player} from './actors/player'
+import {Player} from './objects/player.ts'
+import { Area } from './area.ts'
+import { objectMap } from './objects/objectMap.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.appendChild(html`
 <div>
@@ -19,8 +22,8 @@ tiles.src = tilesUrl
 const display = new Display({
   layout: 'tile-gl',
   bg: 'black',
-  width: 40,
-  height: 40,
+  width: 20,
+  height: 20,
   tileWidth: 12,
   tileHeight: 12,
   tileColorize: true,
@@ -33,8 +36,15 @@ if(container) {
   document.querySelector<HTMLDivElement>('#screen')!.appendChild(container)
 }
 
-const scene = []
-const actors = [new Player()]
+
+let area:Area
+const objects:{draw:(display:Display)=>void, update:(dt:number)=>void}[] = []
+
+fetch('/new1.psci').then(res => res.json()).then(data => {
+  area = Area.loadTiles(data)
+  objects.splice(0, 0, ...Area.loadObjects(data))
+})
+
 
 let lastTick = Date.now()
 
@@ -47,15 +57,17 @@ const draw = () => {
   display.clear()
 
   // draw scene
+  if(area) {
+    area.draw(display)
+  }
   // draw objects
-  // draw actors
-  actors.forEach(actor => {
-    actor.draw(display)
+  objects.forEach(object => {
+    object.draw(display)
   })
 
-  // update actors
-  actors.forEach(actor => {
-    actor.update(dt)
+  // update objects
+  objects.forEach(object => {
+    object.update(dt)
   })
   // update world
 

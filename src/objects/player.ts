@@ -2,7 +2,7 @@ import type { Display } from "rot-js"
 import {keysPressed} from '../input.ts'
 import {colors} from '../colors.ts'
 
-export const Player = class {
+export class Player {
   pos: {x: number, y: number};
 
   constructor() {
@@ -10,7 +10,7 @@ export const Player = class {
   }
 
   draw(display: Display) {
-    display.draw(this.pos.x, this.pos.y, '@', colors[17], null)
+    display.draw(this.pos.x, this.pos.y, '175', colors[17], null)
   }
 
   update(dt: number) {
